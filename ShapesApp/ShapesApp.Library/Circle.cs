@@ -1,7 +1,7 @@
 namespace ShapesApp.Library
 {
     
-    public class Circle : Ishape
+    public class Circle : TwoDShape, Ishape
     {
         public Circle(double radius)
         {
@@ -10,14 +10,14 @@ namespace ShapesApp.Library
 
 
         public static double pi = 3.14159;
-        public int Dimensions => 2;
+        //public int Dimensions => 2;
 
-        public int Sides => 0;
+        public override int Sides => 0;
 
-        public double Area => pi * Radius * Radius;
+        public override double Area => pi * Radius * Radius;
 
         public double Radius {get;set;}
 
-        public virtual double GetPerimeter() => 2 * pi * Radius; //overridden in Colorcircle with write line
+        public override double GetPerimeter() => 2 * pi * Radius; //overridden in Colorcircle with write line
     }
 }
