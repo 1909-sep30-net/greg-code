@@ -36,7 +36,7 @@ namespace ShapesApp.App
                 Width = width
             };
 
-            r.PrintRect();//looks like a tag method from another class, but is actually a method written below
+            r.PrintRect();//looks like a method from another class, but is actually a method written below
 
             var c = new ColorCircle(length,"red");
 

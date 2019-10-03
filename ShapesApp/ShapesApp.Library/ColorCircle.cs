@@ -12,7 +12,7 @@ namespace ShapesApp.Library
 
         public string Color{get;set;}
 
-        public override double GetPerimeter()//virtual in Circle, adds 'color' to writeline
+        public override double GetPerimeter()// in Circle, adds 'color' to writeline
         {
             Console.WriteLine("calculating perimeter for a color circle");
             return base.GetPerimeter();//reuses the original code from circle

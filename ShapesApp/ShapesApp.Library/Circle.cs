@@ -10,9 +10,10 @@ namespace ShapesApp.Library
 
 
         public static double pi = 3.14159;
-        //public int Dimensions => 2;
+        //public int Dimensions => 2;     insert by TwoDShape
 
         public override int Sides => 0;
+        
 
         public override double Area => pi * Radius * Radius;
 
