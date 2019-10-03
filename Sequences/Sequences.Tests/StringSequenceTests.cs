@@ -79,5 +79,23 @@ namespace Sequences.Tests
             //assert
             Assert.Equal(expected: "boogity boogity boogity amen", actual: longest);
         }
+
+        [Fact]
+        public void StartsWithCharShouldFindAllThings()
+        {
+            //arrange
+            var seq = new StringSequence();
+            seq.Add("monkey");
+            seq.Add("money");
+            seq.Add("Amount");
+            seq.Add("money");
+            seq.Add(" mine");
+
+            //act
+            string wordsWithM = seq.StartsWithChar('m');
+
+            //assert
+            Assert.Equal(expected: "monkey money money mine ", actual: wordsWithM);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Sequences.Library
     {
         private readonly List<string> _list = new List<string>();
 
-        //delegation - this class implements Add by delegating the work to another class
+        //delegation - this class implements Add by delegating the work to the basic List class
         public void Add(string item)
         {
             _list.Add(item);
@@ -50,6 +50,21 @@ namespace Sequences.Library
                 }
             }
             return "FAIL";
+        }
+
+        public string StartsWithChar(char character)
+        {
+            string words = "";
+
+            foreach(string s in _list)
+            {
+                if(s.StartsWith(character.ToString()))
+                {
+                    words = words + s + " ";
+                }
+            }
+
+            return words;
         }
     }
 }
