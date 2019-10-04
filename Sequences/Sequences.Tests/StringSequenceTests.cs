@@ -89,13 +89,31 @@ namespace Sequences.Tests
             seq.Add("money");
             seq.Add("Amount");
             seq.Add("money");
-            seq.Add(" mine");
+            seq.Add("mine");
 
             //act
             string wordsWithM = seq.StartsWithChar('m');
 
             //assert
             Assert.Equal(expected: "monkey money money mine ", actual: wordsWithM);
+        }
+
+        [Fact]        
+        public void appendStringAffectsAllMembers()
+        {
+            var seq = new StringSequence();
+            //arrange
+            seq.Add("monkey");
+            seq.Add("money");
+            seq.Add("Amount");
+            seq.Add("money");
+            seq.Add("mine");
+
+            //act
+            string words = seq.appendString("fun");
+
+            //assert
+            Assert.Equal(expected:"monkeyfun moneyfun Amountfun moneyfun minefun ", actual: words);
         }
     }
 }

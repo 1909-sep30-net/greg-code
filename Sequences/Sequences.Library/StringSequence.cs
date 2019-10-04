@@ -66,5 +66,15 @@ namespace Sequences.Library
 
             return words;
         }
+
+        public string appendString(string str)
+        {
+            string newString = "";
+            foreach(string s in _list)
+            {
+                newString = newString + s + str + " ";
+            }
+            return newString;
+        }
     }
 }

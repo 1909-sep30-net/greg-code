@@ -13,9 +13,14 @@ namespace Delegates
         //type for handling the event
         public delegate void MovieFinishedHandler(); //defines a delegate TYPE for return = void, param = none
         //functions with same shape can be SUBCRIBED to this delegate
+        public delegate void MovieFinishedHandlerWithDetails(string name);
+
 
         //the event member
         public event MovieFinishedHandler MovieFinished;
+        public event MovieFinishedHandler MovieFinished;
+
+        //public event Func<>
 
         //method to play movie
         public void PlayMovie()

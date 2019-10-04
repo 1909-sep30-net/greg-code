@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
-using Newtonsoft.Json;
 
 namespace Serialization
 {
-
-    /*
-     * POCO - plain old clr object
-     * a class with jusr public get set properties and default constructor
-     */
-    class Person
+    // this is something called "POCO" plain old clr object
+    // a class with just public get-set properties and a default constructor
+    // "DTO" data transfer object
+    public class Person
     {
         [XmlAttribute]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        //[XmlAttribute(ElementName = "FirstName")] //if the xml doc refers to them differently
+        [XmlElement(ElementName = "FirstName")]
         public string Name { get; set; }
 
         public Address Address { get; set; }
