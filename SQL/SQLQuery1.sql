@@ -1,13 +1,13 @@
 -- basic exercises (Chinook database)
 
 -- 1. list all customers (full names, customer ID, and country) who are not in the US
-SELECT *
+SELECT FirstName + ' ' + LastName AS [Full Name], CustomerId, Country
 FROM Customer
 WHERE Country != 'USA';
 
 -- 2. list all customers from brazil
 SELECT *
-FROM dbo.
+FROM Customer
 WHERE Country = 'Brazil';
 
 -- 3. list all sales agents
@@ -16,7 +16,7 @@ FROM Employee
 WHERE Title LIKE '%Sales%Agent%'; --Sales Agent
 
 -- 4. show a list of all countries in billing addresses on invoices.
-SELECT BillingCountry
+SELECT DISTINCT BillingCountry
 FROM Invoice;
 
 -- 5. how many invoices were there in 2009, and what was the sales total for that year?
@@ -28,7 +28,7 @@ SELECT COUNT(*), SUM(Total)
 FROM Invoice
 WHERE year(InvoiceDate) = 2009; 
 
-SELECT DISTINCT (YEAR(InvoiceDate)) AS [Year], COUNT(*), SUM(Total)
+SELECT (YEAR(InvoiceDate)) AS [Year], COUNT(*) AS [# of sales], SUM(Total) AS [Total]
 FROM INVOICE
 GROUP BY (YEAR(InvoiceDate));
 
