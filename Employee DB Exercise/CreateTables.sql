@@ -7,9 +7,16 @@ CREATE TABLE Employee
 	SSN INT NULL,
 	DeptID INT NULL
 )
+GO
 
+ALTER TABLE Employee DROP COLUMN
+	SSN;
+
+ALTER TABLE Employee ADD
+	SSN NVARCHAR(9);
 
 --CREATE EmpDetails Table
+GO
 CREATE TABLE EmpDetails
 (
 	ID INT NOT NULL IDENTITY(1000,1) PRIMARY KEY,
@@ -21,12 +28,13 @@ CREATE TABLE EmpDetails
 	State NVARCHAR(30) NULL,
 	Country NVARCHAR(60) NULL
 )
+GO
 
 --ADD FK to EMPLOYEE
 ALTER TABLE EmpDetails ADD CONSTRAINT
 FK_EmpDetails_Employee FOREIGN KEY (EmployeeID) REFERENCES Employee (ID)
 
-
+GO
 --CREATE Department Table
 CREATE TABLE Department
 (
@@ -34,7 +42,7 @@ CREATE TABLE Department
 	Name NVARCHAR(90) NULL,
 	Location NVARCHAR(90) NULL
 )
-
+GO
 --ADD FK to Employee
 ALTER TABLE Employee ADD CONSTRAINT
 FK_Employee_Department FOREIGN KEY (DeptID) REFERENCES Department (ID)

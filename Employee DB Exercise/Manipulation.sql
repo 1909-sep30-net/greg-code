@@ -1,5 +1,10 @@
 --add at least 3 records into each table
-
+INSERT INTO Department(Name, Location) VALUES
+(
+	('Math', 'Math Building'),
+	('Science', 'Sciences Building'),
+	('Social Sciences', 'Sciences Building')
+);
 
 --add employee Tina Smith
 
